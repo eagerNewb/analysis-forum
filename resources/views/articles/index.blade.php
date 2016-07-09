@@ -17,7 +17,7 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td>{{ $item->id }}</td><td>{{ $item->name }}</td><td>{{ $item->body }}</td>
+                    <td>{{ $item->id }}</td><td>{{ $item->name }}</td><td><?php print_r($item->body); ?></td>
                     <td>
                         <a href="{{ url('/articles/' . $item->id) }}" class="btn btn-success btn-xs" title="View Article"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                        @if(!Auth::guest()) 

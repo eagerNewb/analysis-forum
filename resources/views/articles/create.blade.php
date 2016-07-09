@@ -24,11 +24,12 @@
             <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}">
                 {!! Form::label('body', 'Body', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::textarea('body', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    <!-- {!! Form::textarea('body', null, ['class' => 'form-control', 'required' => 'required']) !!} -->
+                    <textarea id="messageArea" name="body" rows="7" class="form-control ckeditor" required="required"  placeholder="Write your message.."></textarea>
                     {!! $errors->first('body', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
-            <div class=" form-group {{ $errors->has('user_id') ? 'has-error' : ''}}">
+            <div class="hidden form-group {{ $errors->has('user_id') ? 'has-error' : ''}}">
                 {!! Form::label('user_id', 'User Id', ['class' => 'col-sm-3 control-label']) !!}
                 <div class=" col-sm-6">
 <input class="form-control hidden" required="required" name="user_id" type="number" id="user_id" value="{{Auth::user()->id}}">                    
@@ -52,6 +53,5 @@
             @endforeach
         </ul>
     @endif
-
 </div>
 @endsection
